@@ -16,3 +16,21 @@ const monologueLines = [
   'No.',
   'I am the one who knocks!'
 ];
+
+
+// Array.prototype.reduce(callback, initialValue)
+
+
+// which is the sum of all of the battery counts in the batteryBatches array. Naturally, use .reduce() for this!
+var totalBatteries = batteryBatches.reduce(function(total, element ) {return total + element}, 0);
+
+let wordCountMap = monologueLines.reduce((obj, sentence) => {
+
+   let wordCounter = sentence.split(' ').length;
+   if (!obj[wordCounter]) {
+     obj[wordCounter] = 0;
+   }
+
+   obj[wordCounter]++;
+  return obj;
+ }, {});
